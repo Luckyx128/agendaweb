@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda log</title>
+</head>
+<body>
+    {% if latest_question_list %}
+        <h1>Questôes Cadastradas</h1>
+        {% for quest in latest_question_list%}
+        {{ quest }}
+        {% endfor %}
+    {% comment %} {% else %} {% endcomment %}
+        <h1>Tabela vazia</h1>
+    {% endif %}
+</body>
+</html>
