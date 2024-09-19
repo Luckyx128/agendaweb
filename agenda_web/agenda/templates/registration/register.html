@@ -1,0 +1,16 @@
+<!-- templates/registration/register.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrar-se</title>
+</head>
+<body>
+    <h2>Criar Conta</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>

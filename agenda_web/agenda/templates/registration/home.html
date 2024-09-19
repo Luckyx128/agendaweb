@@ -1,0 +1,16 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Inicial</title>
+</head>
+<body>
+    <h1>Bem-vindo, {{ user.username }}!</h1>
+    {% if user.is_authenticated %}
+        <p><a href="{% url 'agenda:deslogar' %}">Sair</a></p>
+    {% else %}
+        <p><a href="{% url 'agenda:logar' %}">Entrar</a></p>
+        <p><a href="{% url 'agenda:registrar' %}">Registrar</a></p>
+    {% endif %}
+</body>
+</html>
