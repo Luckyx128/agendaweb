@@ -42,3 +42,7 @@ def registrar(request):
     else:
         form = FormularioDeRegistro()
     return render(request, 'registration/register.html', {'form': form})
+
+def calcular(n1:int,n2:int)->int:
+    result = n1+n2
+    return result
