@@ -1,0 +1,61 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #dddddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#sair{
+    position:absolute;
+    right: 5px;
+    top: 5px;
+}
+
+#entrarregistrar{
+    position:absolute;
+    right: 5px;
+    top: 5px;
+    display: flex;
+    flex-direction:row;
+    justify-content: end;
+    width: 200px;
+    gap: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}

@@ -1,15 +1,18 @@
 <!-- templates/home.html -->
 <!DOCTYPE html>
-<html>
+<html lang='pt'>
 <head>
     <title>Página Inicial</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "agenda/home/style.css" %}">
 </head>
 <body>
     <h1>Bem-vindo, {{ user.username }}!</h1>
     {% if user.is_authenticated %}
-        <p><a href="{% url 'agenda:deslogar' %}">Sair</a></p>
+        <p id="sair"><a href="{% url 'agenda:deslogar' %}">Sair</a></p>
         <div>
             <table>
+                <caption>Agendas ativas</caption>
                 <thead>
                     <th>Nome</th>
                 </thead>
@@ -23,8 +26,10 @@
             </table>
         </div>
     {% else %}
-        <p><a href="{% url 'agenda:logar' %}">Entrar</a></p>
-        <p><a href="{% url 'agenda:registrar' %}">Registrar</a></p>
+    <div id="entrarregistrar">
+        <p ><a href="{% url 'agenda:logar' %}">Entrar</a></p>
+        <p ><a href="{% url 'agenda:registrar' %}">Registrar</a></p>
+    <div>
     {% endif %}
 </body>
 </html>
