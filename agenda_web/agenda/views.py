@@ -15,7 +15,7 @@ def deslogar(request):
     return redirect('/')
 
 def logar(request):
-    erro =  False
+    erro:bool =  False
     form = FormularioDeLogin()
     if request.method == 'POST':
         username = request.POST["username"]
@@ -26,8 +26,6 @@ def logar(request):
             return redirect('/')
         else:
             erro = True
-
-
     return render(request,'registration/login.html',{'form': form,'erro': erro})
 
 @login_required
