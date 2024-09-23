@@ -2,12 +2,13 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import FormularioDeRegistro, FormularioDeLogin
-
+from .models import Agenda
 
 # Create your views here.
 
 def home(request):
-    return render(request,'registration/home.html')
+    agendas:Agenda = Agenda.objects.all()
+    return render(request,'registration/home.html',{'agendas':agendas})
 
 def deslogar(request):
     logout(request)

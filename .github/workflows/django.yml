@@ -28,3 +28,6 @@ jobs:
     - name: Run Tests
       run: |
         python ./agenda_web/manage.py test agenda
+    - name: Dev Ini
+      run: |
+        python ./agenda_web/manage.py runserver
