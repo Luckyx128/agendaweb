@@ -15,3 +15,20 @@ class Agenda(models.Model):
 
     def __str__(self):
         return self.nome
+class Status(models.Model):
+    nome    = models.CharField(max_length=20)
+
+    def __str__(self) -> str:
+        return self.nome
+    
+class Card(models.Model):
+    nome   = models.CharField(max_length=100)
+    sprint = models.FloatField()
+    peso   = models.CharField(max_length=2)
+    id_agenda = models.ForeignKey(Agenda,on_delete=models.CASCADE)
+    descricao = models.TextField()
+    id_status = models.ForeignKey(Status,on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return self.nome
+

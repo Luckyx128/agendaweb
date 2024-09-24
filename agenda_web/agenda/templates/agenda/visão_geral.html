@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visão geral {{ agenda.nome }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "agenda/visão_geral/style.css" %}">
+</head>
+<body>
+    <div class="board"></div>
+        {% for position in status %}
+            <div class="column-header">{{ position.nome }}</div> 
+            {% for card  in position.card_set.all %}
+                    <div class="card">{{ card.nome }}</div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</body>
+</html>

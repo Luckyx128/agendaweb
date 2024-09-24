@@ -1,8 +1,8 @@
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from .forms import FormularioDeRegistro, FormularioDeLogin
-from .models import Agenda
+from .models import Agenda,Status
 
 # Create your views here.
 
@@ -45,3 +45,9 @@ def registrar(request):
 def calcular(n1:int,n2:int)->int:
     result = n1+n2
     return result
+
+def planner(request,id_agenda):
+    status = Status.objects.all()
+    agenda = get_object_or_404(Agenda,pk=id_agenda)
+    
+    return render(request,'agenda/visão_geral.html',context={"status":status,'agenda':agenda})

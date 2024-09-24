@@ -15,11 +15,15 @@
                 <caption>Agendas ativas</caption>
                 <thead>
                     <th>Nome</th>
+                    <th>Nome Card</th>
                 </thead>
                 <tbody>
                     {% for agenda in agendas %}
                         <tr>
-                            <td>{{agenda.nome}}</td>
+                            <td> <a href="{% url "agenda:planner" agenda.id %}">{{agenda.nome}}</a></td> 
+                            {% for card in agenda.card_set.all %}
+                            <td>{{ card.nome }}</td>
+                            {% endfor %}
                         </tr>
                     {% endfor %}
                 </tbody>
