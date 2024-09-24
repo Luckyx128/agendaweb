@@ -12,7 +12,12 @@
         {% for position in status %}
             <div class="column-header">{{ position.nome }}</div> 
             {% for card  in position.card_set.all %}
+            {{card.id_agenda}}{{ agenda.nome}}
+                {% if card.id_agenda == agenda.nome %}
                     <div class="card">{{ card.nome }}</div>
+                {% else %}
+                    tesete
+                {% endif %}
             {% endfor %}
         {% endfor %}
     </div>

@@ -50,4 +50,4 @@ def planner(request,id_agenda):
     status = Status.objects.all()
     agenda = get_object_or_404(Agenda,pk=id_agenda)
     
-    return render(request,'agenda/visão_geral.html',context={"status":status,'agenda':agenda})
+    return render(request,'agenda/visão_geral.html',context={"status":status,'agenda':agenda })

@@ -22,7 +22,7 @@
                         <tr>
                             <td> <a href="{% url "agenda:planner" agenda.id %}">{{agenda.nome}}</a></td> 
                             {% for card in agenda.card_set.all %}
-                            <td>{{ card.nome }}</td>
+                                <td>{{ card.nome }}</td>
                             {% endfor %}
                         </tr>
                     {% endfor %}
