@@ -8,17 +8,18 @@
     <link rel="stylesheet" href="{% static "agenda/visão_geral/style.css" %}">
 </head>
 <body>
-    <div class="board"></div>
+    <div class="board">
         {% for position in status %}
+        <div class="column">
             <div class="column-header">{{ position.nome }}</div> 
             {% for card  in position.card_set.all %}
-            {{card.id_agenda}}{{ agenda.nome}}
-                {% if card.id_agenda == agenda.nome %}
-                    <div class="card">{{ card.nome }}</div>
-                {% else %}
-                    tesete
-                {% endif %}
+                {% for cards in agenda.card_set.all %}
+                    {% if card == cards %}
+                        <div class="card">{{ card.nome }}</div>
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
+        </div>
         {% endfor %}
     </div>
 </body>
