@@ -37,3 +37,10 @@ body {
 .card:hover {
     background-color: #f4f5f7;
 }
+
+header{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

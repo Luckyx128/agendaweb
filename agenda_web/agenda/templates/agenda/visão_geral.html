@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static "agenda/visão_geral/style.css" %}">
 </head>
 <body>
+    <header> <h1> {{agenda.nome }} </h1> </header>
     <div class="board">
         {% for position in status %}
         <div class="column">
